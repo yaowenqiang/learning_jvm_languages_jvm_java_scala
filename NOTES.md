@@ -60,6 +60,54 @@ per priority
 + Multiple standalone web services(not a requirement)
 + Most commonly used - Vert.x and Spark Java
 
+## Popular Use cases
+
++ Web applications
++ Big data
++ IoT
+
+### JVM in web applications
+
++ focused on performance
++ Scalable across different servers
++ Predictable
++ Debugging and profiling tools available
++ Monitoring of JVM internals possible
++ Examples - Twitter, Amazon, Spotify, and Nexflix
+
+### Analyzing Data
+
++ Searching for something
++ Looking for patterns
++ Calculating statistics
++ Data can be obtained from:
+  + Data collected from web servers
+  + Output obtained from external sensors
+  + Legacy servers
+
+### Big Data - Popular Technologies
+
++ Apache Hadoop
+  + Storage of data
+  + Data distribution to other servers
++ Apache Spark
+  + Data streaming
+  + Incoming data analysis
+
+### IoT
+
++ Popular and common
++ Memory-constrained systems:
+  + Java ME embedded platform
+  + Commercial IoT devices
++ Device sparing memory:
+  + Java Se embedded edition
+  + Desktop GUIs for full user interaction
+
+
+
+
+
 
 
 
