@@ -121,6 +121,87 @@ Web application senarios
 
 ## JVM concepts
 
++ JVM concepts
+  + Virtual Machine
+  + Cmpilers
+  + classes
+  + Backword compatibility
++ Java editions
+
+### JVM concepts
+
++ Virtual Machine
++ JIT compiler
++ Built-in primitive datatypes
++ Reference types
++ Garbage collector process
++ Built tools
+
+
+Application - JVM instance in system memory
+
+
+JIT compiler
+
++ Often called routine - compiled
++ Advantages:
+  + Cross platform files
+  + No waiting for native compiling
+  + immediate execution
+
+### Primitive Datatypes
+
+| Java Name | Description and Size | Values(inclusive) | 
+| ---------- | -------------------- | ----------------- |
+byte | Signed byte (8 bits) | -128 ~ 127
+short | Signed short integer (16 bits) | -32768 ~ 23767
+int | Signed integer (32 bits) | -2**31  ~ 2**31-1
+long | Signed long integer (64 bits) | -2**64 ~ 2**63-1
+float | Single-precision floating point (32-bit) | Non-precise floating point values
+double | Double-precision floating point(64-bit) | Non-precise floating point values
+char | A single Unicode UTF-16 character(16-bit) | Unicode character 0 to 65535
+boolean | Boolean | True / False
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+### Java class library
+
++ Wrapper objects
+  + Primitive types
+  + languages
++ Autoboxing
+
+### Classes
+
++ Contains functions and variables
++ Single-inheritance model
++ interface:
+  + List of function prototypes and constants
+  + Compiler has implementation for functions
++ Class grouped in packageso
+
+### Refreence types
+
+
++ Refreence variable - points to specific instance or nothing
++ Specific instance:
+  + Call object's methods
+  + Access public atributes
++ Nothing
+  + Null refreence
+
+
+```java
+
+Product p = new Product();
+p.setName("box of biscuits");
+
+
+
+```
+
+
+
 ## Java editions
 
 ## Other languages on JVM
