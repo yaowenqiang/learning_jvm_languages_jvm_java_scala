@@ -197,12 +197,55 @@ Product p = new Product();
 p.setName("box of biscuits");
 
 
+p = null;
+p.setName("This line will produce an error at run-time")
+
+
 
 ```
 
+### Garbage Collector
+
++ In JVM
+  + No manual allocation and release
+  + Concentrate on ceating objects
++ Halts applications
++ Scans Memory
++ Remove objects deleted safely
++ Reclaim freed space
++ Configurable parameters for better control
++ Avoid creating tons of objects
+
+### Trick to Tame GC
+
++ Put objects in a pool
++ One object plucked acrooding to need
++ Object put back when not needed                                                        
 
 
 ## Java editions
+
++ Java Standard Edition(Java SE)
++ Java Enterprise Edition(Java EE)
++ Java Micro Edition(Java ME)
+
+### Java EE
+
++ Builds upon Java SE
++ Adds lot of APIs
++ Run inside JVM application servers
++ important addition for business developers
++ Download a full application server compatible with Java EE platform
++ APIs must be available                                                         
+
+
+### Java ME
+
++ Important platform before android and IOS
++ Featured subset of Java-Class Library
++ Additional APIs
++ Java ME embedded - commercial IoT devices
+
 
 ## Other languages on JVM
 
