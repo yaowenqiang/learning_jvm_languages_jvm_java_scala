@@ -741,9 +741,96 @@ Private | private | Only be seen and accessed by the class that defines the memb
 + Reference tyep variable will not provide access to static methods 
 
 
+### Operators
+
+| Operator | Description |
+| --------- | -----
+| value++ | - 
+| value-- | Returns the value, then increase or decrease the value
+| ++value | -
+| --value | Increase or decrease the value,then returns the value
+| ! | Logical NOT operator
+| % | Refers to the remainder (integer) of a division
+| instanceof | Returns a Boolean indicating wether the passed object is an instance of the specified clas or interface.
+| == | -
+| != | Refer to equal to and unequal to signs
+| && | -
+| !! | Logical AND or OR operations
+| =  | Refers to an assignment
+| +=, -=, *=, /=  | Calculate a new value and directly asign the resut to the variable
+
+### Equals to (==)
+
++ Works properly on primitive variables
++ In objects, object references are compared
++ Class content is not compared
++ Consequence - content of a String variable checked with the equals methods
+
+
+### POJO
+
+
+A class is a POJO if
+
++ Does not extend classes or implement interfaces
++ Class is mutable
++ Public construction accepts on parameters
+
+### POJO Property
+
++ A value that can be set and retrived using methods
++ Process：
+  + Property values stored in private variables
+  + Getter - return values
+  + Setter - store values
+  + Getter method prefix - get/is
+  + Setter prefix - set
+
+### Arrays
+
+#### Points to Note
+
++ Arrays utility class - static, convenient utility methods
++ Consult API Documentation for:
+  + Converting arrays into a collection class instance
+  + Searching an item in array
+  + Sorting the array
+
+### Generics
+
++ Certain classes can be used with a fixed type
++ Example:
+  + ArrayList storing java.lang.integer class instalce will refuse to compile others
+
+### HashMap
+
++ Class from java.util package
++ Implements java.util.Map interface
++ Use for reference variable and to hide that we are using Hashmap
+
+### Catch Blocks
+
++ None applicable - caller of methods
++ Try...catch block present  - analysis
++ Match found - control transfered
++ No try...catch block - look at caller till stack exhausts
++ No try...catch block handle - program will crash
+
+### Catch Blocks - Order
+
++ Most concrete Exception classes
++ Exception subclasses
++ Exception
 
 
 
 
+
+
+## Install java jupter kernel
+
+> brew install jbangdev/tap/jbang
+> jbang install-kernel@jupyter-java
+> jupyter lab
 
 
