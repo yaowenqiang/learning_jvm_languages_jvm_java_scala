@@ -180,15 +180,15 @@ https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
   + Compiler has implementation for functions
 + Class grouped in packageso
 
-### Refreence types
+### Reference types
 
 
-+ Refreence variable - points to specific instance or nothing
++ Reference variable - points to specific instance or nothing
 + Specific instance:
   + Call object's methods
   + Access public atributes
 + Nothing
-  + Null refreence
+  + Null reference
 
 
 ```java
@@ -248,4 +248,502 @@ p.setName("This line will produce an error at run-time")
 
 
 ## Other languages on JVM
+
+### JVM Specification Documentation
+
++ Low-level commands JVM can execute
++ Required data structures
++ Accessing emory rules
++ Java bytecode's .class format
++ Enabled writers to experiment
+
+### Mixing languages
+
++ languages offer interoperability with JVM languages
++ Use of standard Java Class Library classes for data structures
++ Compile methods similar to Java
++ Certain classes compiled in different languages
++ Complicates process
+
+### Writting Unit Tests in different languages
+
++ common to test Java code with unit tests of different languages
++ Code in other languages:
+  + Compact
+  + ideal for small, concrete and readable unit tests
+  + Language's runtime library only used while executing
+  + Not bundle with compiled main project
++ Groovy:
+  + Built-in assert statement
+  + Prints verbose and readable output
+
+## Install 
+
+env 
+
+> JAVA_HOME
+
+https://docs.oracle.com/javase/8/docs/api/
+
+JDK - Important Components
+
+| Directory Name | Description | 
+| ---------------- | ----------- |
+| bin | Contains all the executable commands that are supplied with JDK | 
+| db | Everything related to the JavaDB component is stored here. JavaDB is Oracle's supported version of the Apache Derby database project.Derby is an open source file-based relational database system that has strong SQL support. it is fully implement in java.| 
+| include | For advanced programmers. contains headers for C compilers that can be used to call platform - or operation-system-specific native code from java code or vice versa.| 
+| jre | files related to JRE stored,including Java Class Library, All the commands from the jre/bin directory are also placed in JDK's bin subdirectory|
+| lib | Libraries used by certain development tools are stored here.|
+
+
+
+JDK - Commands
+
+| Directory Name | Description | 
+| ---------------- | ----------- |
+| jar | This is the tool to creat a new, extract data from, or add files to existing JAR archive files. | 
+| jarsigner | This protects JAR files by adding a digital signature to them. if the data inside a JAR file is modified without updating the signature, it will no longer be considered valid.| 
+| jdeps | This outputs dependency information of a JVM-compiled .class file or a JAR file.| 
+| jjs | This launchs Oracle Nashorn's interactive interpreter shell. Nashorn is Oracle's JavaScript interpreter |
+
+
+https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html
+
+GUI Monitor Tools
+
++ Commands that offer a fuul desktop GUI:
+  + Java VirtualVM
+  + Oracle Misson Control
+  + JConsule
+
+Java VisualVM
+
++ included in Oracle's JDK and open source OpenJDK
++ Monitors JVM instances of each running JVM application
++ Built-in features enhanced by installing plugins
+
+https://visualvm.github.io/
+
+> jvisualvm
+
+
+Oracle Misson Control
+
++ Present in Oracle's recent JDK version
++ Monitors JVM instances and running application
++ Better user interface than Java VirtualVM
++ Propriety software
++ Java Flight Recorder(free in development environment)
+
+
+> jmc
+
+JConsole
+
++ Oldest monitoring tool
++ Other tools are better
+
+> jconsole
+
+
+JRE
+
++ Installs the Java command
+  + Runs JVM instance and full Java Class Library
++ Used to start applications
+
++ JRE
+  + 32-bit or 64-bit
+  + End user desktop machines
++ Server JRE
+  + Servers by advanced system admins
+  + 64-bit
+
+## Class Organization with Packages
+
+### Rule for Package Names
+
++ Package name can have dots
++ Dots used to separate element
++ Element - letters, digit, underscore
++ Element must start with letter
++ Element connot be same as keyword (int, short, class, for, final)
+
+### Universal Naming Conventions
+
++ Package name in lowercase
++ Start package name with reversed internet URL of:
+  + Company's site
+  + Project's site
+  + Project's public source code repository
+  + Personal home page
++ Own convention to differentiate classes and prevent naming conflicts
++ illegal element:
+  + Put an underscore before of after it 
+  + Replace the illegal character with underscore
+
+## Java Class Library
+
+Java class library
+
++ Also known as Java API
++ Collection of pre-built Classes
+
+Common data structures - definitions and implementations
+
++ Console I/O
++ File I/O
++ GUI Toolkits
++ Networking
++ Regular expressions
++ XML creation and processing
++ Database Access
++ Reflection
++ Mathematics
+
+
+#### Packages
+
++ All classes in library
++ Important packages names start with java or javax
++ Vendor's clases are in packages starting with:
+  + com.sun, sun or com.oracle
++ Using add-on libraries recommanded
+
+#### Most important packages
+
+| Package(s) | Description |
+| ---------- | ----------- |
+| java.lang | This class is considered fundamental, it contains the String and StringBuilder classes, primitive wrappers, threading, and the mother of all objects - Object. |
+| java.lang.reflect | This offers APIs for reflection. Reflection make it possible to dynamically look at classes to look up method and variable names, invoke methods, and read or write atributes | 
+| java.util | This is on of the most important packages,it contains classes that implement collections, dat and time, internationalization, and many others.|
+| java.util.cuncurrent | This contains classes for concurrent programming |
+| java.io | ---- |
+| java.net | ---- |
+| java.nio | These are classes for the operation system, file, and networking I/O. it also contains character-set encoding/decoding classes. |
+| java.math | This offers the BigDecimal class.which is much more precise than the primitive float and double types and the BigInteger class, which can hold larger values than the int and long primitive types |
+| java.xml | This refers to the XML processing classes |
+| java.sql, |  --- |
+| javax.sql, | this contains classes to work with the JDBC database system. |
+| javax.awt, | this is Abstract Window Toolkit. the earliest Java GUI toolkit. It offers a layer between the native GUI of the operation system and the JVM.|
+| java.swing | This refers to the Swing GUI toolkit classes. built on top of the AWT toolkit. A big difference with AWT is that all the GUI controls are implement in the Java cod in them. |
+| javafx | This refers to the JavaFX GUI toolkit classes. This is a very modern offering of 3D accelerated graphics. |
+
+Commonly used Methods of java.lang.Object
+
+| Method Name | Return Type | Description | 
+| ----------- | ----------- | ----------- |
+| toString()  | String      | This returns the textual description of the object |
+| equals(Object object)  | Boolean | This returns whether the passed object is considered equal to the current object |
+| hashCode() | int | This is called when a hash value of the current class is required |
+
+String Class - java.lang.String
+
+
++ Represents JVM string type
++ Changes to string object do not change original object
++ Produces a new string with modified content
++ Stored internally in UTF-16 encoding
+
+### Need of Primitive Wrapper classes
+
++ All APis cannot work with built-in primitive datatypes
++ If primitive wrapper class is required, corresponding instance created
++ Primitive variable required, wrapper object assigned:
+  + Value of wrapper class assigned to primitive variable.
+
+### Exceptions and Errors
+
++ Handling runtime errors different in different languages
++ Built-in classes inheriting Exception or Error class
++ Look for an exception that can be reused
++ Example - method not excepting null references throws:
+  + java.lang.NullPointerException
+
+### Distiction between Exception and Error
+
+| Exception  | Error | 
+--- | ---
+thrown when the program can handle the error and continue running | Problem detected that can not be anticipaged.
+
+
+### Exceptions 
+
+
++ Java bytecode - comiles source code file names and line numbers
++ Advantage - source code line numbers returns to stack trace
++ Readable stack traces
++ In Java, not all classes can throw all exceptions
+
+### Collections API
+
++ java.util package -data structures
++ Use own variations for additional functionality
++ Maximal compatibility with :
+  + Java and JVM platforms with built-in classes
++ Collection classes only work with objects
++ Primitive values autoboxed into object and vice versa
++ Collection classes:
+  + java.util.ArrayList - a list class
++ java.util.HashMap - container for key/value combination
+
+| Collections Classes | Python | Ruby |
+--- | ---- | ---
+java.util.ArrayList | List type | Array object 
+java.util.HashMap | Dict type | Hash object 
+
+#### ArrayList
+
++ implements List structure that hold other objects
++ Easier to work with
++ Advantages:
+  + Grows automatically when more space is needed
+  + Lot of methods to calculate size of array
+  + Methods are also added by some languages
+
+#### HashMap
+
++ Store key/value combination - map
++ inserting objects - key  object and value object specified
++ Value object retrived with the help of key object
++ Original order of keys not kept
+
+
+#### HashMap - Methods
+
+| Method Name | Return Type | Description | 
+| ------ | ----- | ---- |
+put(Object key, Object value) | Object | This is to add a new key and value pair. if the key already exists, then the corresponding value is overwritten with the passed value. it returns null if the key is already added , otherwise, it returns the existing value
+putAll(Map map) | This add all the key/value pairs from the specified map , again overwriting values when the keys already exist.
+| containsKey(Object key) | Object | This returns whether the key is currently in the map
+| get(Object key) | Object | This returns the value associated with the key. or it returns null when the key is not found
+| getOrDefault(Object key, Object defaultValue) | Object | This returns the associated value if the key can be found, otherwise, it returns the passed defaultValue
+| clear() | - | This empties the collection; all the key/value paires will be removed
+| Size() | int | This returns the number of key/value pairs that the Map currently stores
+
+
+#### java.lang.Object Methods
+
++ hashCode
++ equals
++ Java - define classes and write implementations for both methods
++ Other languages - generate implementations automatically
++ Can override JVM's automatically generated methods
+
+### hashCode()
+
++ Called when a hash of the object is needed
++ Returns integer value when object content Changes
++ Returns a value disticnt from other similar objects
+
+## Running JVM Applications on the Command Line
+
+
+Introduction
+
++ Running application is complex
++ Source codes compiled to binary files with a .class file extension
++ Rules:
+  + At least one class must have static main method
+  + Class files should be stored in specific directories
+  + ClassPath has to be specified
+  + Java command used to run the program
+
+Points to Remember
+
++ Avoid having classes in project outside package
++ Compiler creates the correct directory structure automatically
++ Compilers require source to be organized according to requirements
+
+
+ClassPath
+
++ List of directories used by JVM to find refreenced class
++ Defaults to current directory unless set
++ Don't set ClassPath explicitly if:
+  + All files used are stored in directory used to launch program
+  + Class file package name matches the directory structure
+
+Add-On Libraries
+
++ Used often in the real world
++ Runtime library required
++ Put add-on library files in separate directory
++ Library placed in JAR file - specify it on ClassPath
+
+ClassPath
+
++ Absolute and relative paths specified for a JAR file
++ Relative paths:
+  + Start point - directory from where command is launched
++ Entries read from left to right
++ Orders is important
++ Values of CLASSPATH environment set - taken
++ -cp or classpath command-line option specified on the java command - taken
+
+### Placing Class Files inside a JAR Archive
+
++ Convenient
++ External dependencies required by JAR file put on ClassPath
++ Mentioned in Documentation
+
+### Runnable JAR File
+
++ Can be started using java command
++ JAR file specifes the class that contains main method
++ Self-contained
++ Has all required dependencies
++ Main methods does not need to be pointed out
++ cannot find class placed outside the JAR file
+
+
+## Java
+
+### Naming Convention
+
++ CamelCase
++ Starts with a captial letter
++ No space between words
++ Each new word starts with a captial letter
+
+### Rules for a Class Name
+
++ Starts with a non-digit character
++ No dashes and spaces
++ Digits are allowed after first letter
++ Keywrds not allowed
+
+### Class Access Modifiers
+
++ Can be used to modify visibility
++ Default visibility - package private;
+  + Can bee referenced to or instantiated by same package classes
+
+### Defining Packages
+
++ Package - puts class inside package
++ First uncommented line in code 
++ Statement ends with semicolon
++ Example - com.example.package_name;
+
+### Importing Classes
+
++ Not recommanded for larger systems
++ Classes from specified packages are imported
++ Example - java.util.concurrent:
+  + Utility classes for concurrent programming
++ Import statements from both packages required
++ java.lang - packages imported implicitly
+
+### Adding Variables and Methods
+
++ Variables hold data
++ Methods act upon data
++ Visibility chagned by using access Modifiers
+
+### Initializing Values
+
++ implicit:
+  + 0 - int, long, and short
+  + 0.0 - float, double
+  + False - Boolean
+  + Null - refreence types
+
+### Variable - Naming convention
+
++ Start with lowercase
++ Special characters not recommanded
+
+### Methods
+
++ Method with return type - return the object or null
++ Method with void - not allowed to return anything 
++ Variables should be Initialized before using them
+
+### Modifiers
+
++ Types:
+  + Access Modifiers
+  + Non-access Modifiers
++ While mixing, order not important
++ Convention - first access, then non-access
++ Class decides accessbility with the help of modifiers
+
+
+#### Access Modifiers
+
+| Name | Access Modifier | Description |
+------ | ----------------| ------
+Public | public  | Can be accessed by all parts of the code that have access to the class
+Protected | protected | Can be seen and accessed by the class itself, other classes in the same package, and classes that inherit the class hidden from all other classes
+Package-private | - | When you don't specify an access Modifier,the class member can only be seen and accessed by the class itself and other classes in the same package hidden from classes in other packages, even when such a class could inherit the class
+Private | private | Only be seen and accessed by the class that defines the member
+
+### Static Variable and Method
+
++ Variable - can be accessed without instance
++ Method - called without reference type
+
+### Constructors and Finalizers
+
++ Defined by Java objects
++ Constructors called when class instance created
++ finalize() - when object to be collected by gargage Collector
+
+
+### finalize()
+
++ Free resources that the class is utilizing
++ Close resources as early as possible to free finalize()
++ Can write a log when finalize() is used
+
+### Constructor - Rules
+
++ Sublass Constructors call parent's constructor
++ No constructor in subclass:
+  + Constructor required in parent class
++ No constructor with empty parameters in parent class:
+  + Subclass constructors call parent class with valid parameters
++ Calls parent class's parameterless constructors automatically
+
+### Abstract Class
+
++ Prefix - Abstract
++ Can be extended
++ Not instantiated
+
+### Interfaces
+
++ Similar to abstract blass
++ Unable to provide implementations of methods
++ Implemented by classes
+
+### Interfaces - Rules
+
++ Public interface should be defined in a file matching the interface name
++ Support public and Package-private
++ Members - implicitly abstract and public
++ Access modifiers explicitly added
++ Public modifiers only
++ Method - public instance methods
++ Variables - final and static modifiers
++ Class can implement any number of interfaces
+
+### Why provide default implementations
+
++ Adding new methods broke compatibility
++ Classes had to be modified before compiling
+
+### A new Feature
+
++ Adding static methods to an interface
++ implementations for static methods needs to be provided
++ Reference tyep variable will not provide access to static methods 
+
+
+
+
+
+
+
 
