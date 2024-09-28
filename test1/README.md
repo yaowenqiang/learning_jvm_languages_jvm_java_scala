@@ -7,9 +7,15 @@ java  com.example.app.Controller
 # class path
 
 
-TODO 
+# ; for windows and : for linux and mac
 
-java -cp ".;../lib" com.example.app.Controller # not working right now
+java -cp ".;../lib" com.example.app.Controller
+java -cp ".:../lib" -verbose:class com.example.app.Controller
+java -cp ".:../lib" -verbose:gc com.example.app.Controller
+java -cp ".:../lib" -verbose:jni com.example.app.Controller
+
+https://dzone.com/articles/how-use-verbose-options-java
+
 
 
 jps 
