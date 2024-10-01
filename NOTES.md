@@ -823,6 +823,15 @@ A class is a POJO if
 + Exception
 
 
+### Character Class
+
++ Wrap a char primitive value
++ Char - single quotes
++ String - double quotes
++ Get method - returns integer wrapper class comtaining frequency
++ AssertEquals(int, int) easily used
++ If mentioned version not used, casting required
+
 
 
 
@@ -832,5 +841,33 @@ A class is a POJO if
 > brew install jbangdev/tap/jbang
 > jbang install-kernel@jupyter-java
 > jupyter lab
+
+## Scala
+
+> scala 
+
+> https://docs.scala-lang.org/
+> https://www.scala-lang.org/api/current/
+
+### Functional Versus Imperative(命令式) programming
+
+#### Imperative Programming
+
++ Multiple variables and classes with internal states
++ Example - PIJO(Plain Old Java Object)
++ POJO:
+  + Variables can be changed by calling setter methods
+  + Node reaching POJO instance can modify its variables
+  + Can lead to bugs
+
+#### Functional Progarmming
+
++ Existsing variables not mofified when code is running
++ Values specified as function parameters
++ Output generated based on parameters of values
++ Functions - return same output for same parameters
+
+
+
 
 
