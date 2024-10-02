@@ -867,7 +867,25 @@ A class is a POJO if
 + Output generated based on parameters of values
 + Functions - return same output for same parameters
 
+```scala
+    class AddDemoOOP {
+        var x = 0
+        def add(y: Int) :INt = {
+            x += y
+            x
+        }
+    }
+     class AddDemoFunctional {
+        var x = 0
+        def add(x:Int, y: Int) :INt = {
+            x + y
+        }
+    }
+```
+### Functional Programming - Advantage
 
++ Popular with programs with multiple threads
++ Safer than Imperative code
 
 
 
