@@ -887,5 +887,73 @@ A class is a POJO if
 + Popular with programs with multiple threads
 + Safer than Imperative code
 
+## Scala Language syntax and Rules
+
+### Scala - Statically Typed language
+
++ Declare variables before using them
++ Spcify used types
++ Types specified when declaring method imput parameters
++ Types not required when declaring variables inside a method or function body
+
+```scala
+var i = 10
+var j = new java.lang.Object()
+```
+
+### Mutable and immutable Variables
+
++ Prefix with variables when declaring method parameters
++ var - muitable variables
++ val fixed variables
+
++ Variable
+  + Normal variables in java
+  + Fully mutable
+  + Freely changed
++ Fixed Variable
+  + Final variables
+  + Can be assigned only once
+  + Content can be changed
++ immutable variables:
+  + Functional Programming
+  + immutable variables
+
+### Common Scala Types
+
++ Any
++ AnyRef
++ AnyVal
++ Strings
+
+### Any
+
+
++ Scala's parent class
+
+### AnyRef
+
++ Used by reference variables
++ Similar to java.lang.Object
++ Methods - equals, hashCode, finalize
+
+### AnyVal
+
++ Used by value classes
++ Has wrapper classes(primitive values) as subclasses
+
+
+### Why Scala Has its Own Wrapper Class?
+
++ Improves performance
++ Uses internal Logical
++ Operator overloading
+
+### Strings
+
++ Normal string class from java.lang package
++ immutable
++ String modified -> modified string instance returns
++ Perfect fit fot Scala's functional language
 
 
