@@ -905,7 +905,7 @@ var j = new java.lang.Object()
 
 + Prefix with variables when declaring method parameters
 + var - muitable variables
-+ val fixed variables
++ val - fixed variables
 
 + Variable
   + Normal variables in java
@@ -1059,4 +1059,182 @@ def methodWithoutReturnValue(): Unit = {
 
 }
 
+def helloWorld() = println("Hello world")
+
 ```
+
+#### Access Modifiers
+
++ Class public when no access modifier
++ Other - protected and private
++ Scala:
+  + Subpackage classes can access private members of parent package
+  + Method with protected modifier - not visible to other Classes
+
+#### constructor
+
+```scala
+class ClassWithParameterizedConstructor(var parm1: Int, param2: Int) {
+    println("This code is executed as part of the constructor")
+}
+
+class ClassWithParameterizedConstructor(var parm1: Int, param2: Int) {
+    def this(param1: Int) = this(param1,0)
+}
+```
+
+#### Points to Note
+
++ Scala automatically creates fields for same name parameters
++ Getters and setters generated implicitly
++ Constructor parameters freely accessed
++ Between var and val, val is implicity chosen
++ All variables are values can be accessed  by all code
++ Statements in the body are executed when man constructor used
++ Constructors can be overloaded(Auxiliary constructors 辅助构造器)
++ Creating an additional construcotr - 'this'
+
+
+```scala
+class ClassWithParameterizedConstructor(val param1: Int, val param2: Int) {
+    def this(param1: Int) {
+        this(param1, 0)
+    }
+}
+
+```
+
+
+#### Rule for Auxiliary Constructors:
+
++ First line:
+  + Call the primary constructor
+  + Call one of the constructors defined before the current one
+
+### Extending a Class
+
++ 'extends' keyword used
++ Inheritance of single class allowed
++ If no class inherited AnyRef class is
++ Only primary constructor of subclass can call parent class constructor
+
+```scala
+    class ParentClass {
+    }
+    class SubClass extends ParentClass {
+    }
+    class ParentClass(param1: Int, param2: Int) {
+    }
+    class SubClass(var param1: Int) extends ParentClass(param1, 10) {
+    }
+
+```
+
+#### Override methods
+
+```scala
+class ParentClass {
+def test() = print("Hellok, from the parent class")
+}
+class SubClass extends ParentClass {
+override def test() = {
+    super.test()
+    print("Hellok, from the child class as well")
+}
+}
+
+class OverloadExample {
+def anOverloadMethod(i: Int) {}
+def anOverloadMethod(s: String) {}
+} 
+
+abstract class AbstractClassName {
+def methodWithNoImplementationYet
+def methodWithImplementation() {}
+} 
+
+trait traitName {
+def methodWithImplementation() {
+}
+def methodWithoutImplementation()
+}
+
+trait traitA {def method1()}
+trait traitB {def method2()}
+trait traitC {def method3()}
+
+class TraitDemoClass extends TraitA with TraitB with TraitC {
+def method1() {}
+def method2() {}
+def method3() {}
+}
+
+object SingletonObjectName {
+var x = 100
+def printX() = println(x)
+}
+SingletonObjectName.x = 250
+SingletonObjectName.printX()
+
+```
+
+#### Operator overloading
+
++ In Java:
+  + '+' and * cannot be overriden
++ IMplements operators as ordinary method
++ Possible to override operators and implement them in custom classes
++ For example:
+  + Using the + method
+  + '+' decides the operation depending on the instances
+
+```java
+class A (
+public static void main (String[] args) {
+    // compile error: bad operand types for binary operator '+'
+    A result = new A() + new A();
+}
+)
+
+```
+
+
+```scala
+class CustomClass(var x: Int) {
+    def + (other: CustomClass) = {
+        new CustomClass(x + other.x)
+    }
+}
+
+val result = new CustomClass(400) + new CustomClass(500)
+
+```
+
+#### Case classes
+
+```scala
+abstract class Figure 
+case clas Rectangle(x1: Int, y1: Int, x2: Int, y2: Int) extends Figure
+case clas Circle(x: Int, y: Int, diameter: Int) extends Figure
+case clas Line(x1: Int, y1: Int, x2: Int, y2: Int) extends Figure
+
+val rectangle = Rectangle(10, 20,80 ,50)
+val circle = Circle(100,200,30)
+
+def drawFigure(figure: Figure) : Unit = {
+    figure match {
+        case Rectangle(x1, y1, _, _) => _draw(x1, y1)
+        case Circle(x, y, _) => _draw(x, y)
+        case Line(x1, y1, _, _) => _draw(x1, y1)
+    } 
+    def _draw(x:Int, y:Int) : Unit = println("Start drawing at " + x + ", " + y)
+    
+}
+
+drawFigure(rectangle)
+drawFigure(circle)
+
+```
+
+## Scala's standard Library
+
