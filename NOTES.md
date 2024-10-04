@@ -956,4 +956,107 @@ var j = new java.lang.Object()
 + String modified -> modified string instance returns
 + Perfect fit fot Scala's functional language
 
+### OOP in Scala
 
++ Scala compiler requires code wrapped in class
++ Code automatically wrapped in invisible class by Repl
++ Immediately write function or code to execute
+
+#### Defining Classes and Subclasses
+
++ More support
++ Packages having same prefixes are related
++ Define subpackage in same file that contains packages
+
+
+```scala
+package packagename
+package com.example.parent
+
+class A {
+
+}
+
+package subpackage {
+class B {}
+class C {}
+
+}
+
+```
+
+#### REPL Shell
+
+
++ Package statement cannot be used
++ generates an invisible class that has code 
++ Compile source code with scalac compiler
+
+
+```scala
+import com.example.parent.A
+import com.example.parent._
+import com.example.parent.{B,C}
+import com.example.parent.{C => D}
+
+import com.example.parent
+var c = new parent.subpackage.C()
+
+class TheClassName {
+
+}
+
+
+
+```
+
+#### defining Classes
+
++ Any numbers of classes defined
++ Source file name not require to match with classes it defines
++ Private access mofifier supported
++ Not specifying a modifier makes a class public
+
+#### Instance Variables and Methods
+
++ Present in classes
++ Class methods and variables not supported in Scala
++ Singleton classes are the alternative
++ Instance variables
+  + Added by defining def and val variables
+  + Scala detects type from initialization
+
+#### Instance Variables - initialization
+
++ Not to be initialized explicitly
++ Initialized with a null value
++ Value must be assigned at the time of declaration
+
+#### Instance Methods
+
++ Method declaration similar to java
++ Types of input parameters need to be specified
++ Can return nothing on or instance
++ Return type - optional
+
+```scala
+def methodName(parameger1: Int, parameger2: Int): Int = {
+    parameger1 + parameger2
+}
+
+```
+
+#### Return Type
+
++ explicitly
++ Not require or recommended
++ When using return statement, explicitly define return type
++ Unit class name - method does not return anything
+
+
+```scala
+def methodWithoutReturnValue(): Unit = {
+
+}
+
+```
