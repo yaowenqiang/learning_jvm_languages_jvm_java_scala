@@ -1238,3 +1238,67 @@ drawFigure(circle)
 
 ## Scala's standard Library
 
+### Generics
+
++ Notation - className<T>
++ For Map - types speified for keys and values
+
+```scala
+var aList = List[Int] (1,2,3,4)
+val m = Map[String, String]("key1" -> "Value1", "Key2" -> "Value2")
+
+```
+
+### Mutable and immutable list
+
+```scala
+val immutableList = List[Int](1,2,3,4,5)
+val newImmutableList1 = 0 :: immutableList
+val newImmutableList2 = immutableList ::: List(6,7)
+
+import scala.collection.mutable
+val aMutableList = mutable.ListBuffer[Int](1,2,5)
+aMutableList.remove(2)
+aMutableList.append(3)
+aMutableList -= 5
+aMutableList += 3
+
+val aMutableArray = mutable.ArrayBuffer[Int](1,2,3)
+aMutableArray += 4
+
+```
+
+### ImmutableMap
+
+
+```scala
+val immutableMap = Map[Int, String](10 -> "ten", 20 -> "twenty")
+println(immutableMap(20))
+val newImmutableMap = immutableMap + (30 -> "thirty")
+val combineMap = newImmutableMap ++ Map[Int, String](24 -> "Twentyfour")
+
+
+val mutableMap = mutable.HashMap[Int, String](10 -> "ten", 50 -> "fifty")
+mutableMap += (100 -> "Hundred" ,150 -> "Hundred and fifty")
+mutableMap -= 10
+```
+
+### XML Processing
+
++ XML library - helpful feature for generating and consuming
++ XML iterals - enter XML content directly in the source code 
++ XML library - populates variables and validate generated XML
+
+
+
+```scala
+
+val productCode = "PC Monitor"
+val qty = 2.toString()
+val xmlContent = <basket>
+    <line>
+        <product qty={ qty }> { productCode } </product>
+    </line>
+</basket>
+
+```
