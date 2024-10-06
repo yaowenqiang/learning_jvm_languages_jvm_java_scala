@@ -1302,3 +1302,82 @@ val xmlContent = <basket>
 </basket>
 
 ```
+
+```scala
+<basket>
+    <line>
+        <product qty="2">PC Monitor</product>
+    </line>
+</basket>
+
+val productCodes = List[String]("Keyboard", "Mouse")
+def createXMLProduct(productCode: String) : xml.Elem = {
+    <product qty="1"> { productCode } </product>
+}
+
+def lines = <basket>
+    <products>
+{ productCodes.map(x => createXMLProduct(x)) }
+    </products>
+</basket>
+
+```
+
+## Functional Programming in Scala
+
+### Iterating Through Collections Using Functions
+
++ Unusual to use for or while loop
++ Method called on array or collection instance:
+  + Iterate through the array or collection
+  + Takes a lambda function as parameter
+  + Ensures that function is called for each item
+
+```scala
+var a = List[Int](5, 10, 15, 20, 25)
+a.foreach((x:Int) => println("%03d".format(x)))
+
+```
+### Map
+
+```scala
+var a = List[Int](5, 10, 15, 20, 25)
+var b = a.map((x :Int) => 2 * x)
+
+```
+
+### Filter 
+
+```scala
+var a = List[Int](5, 10, 15, 20, 25)
+var b = a.filter((x: Int) => x > 10)
+```
+
+### Reduce
+
+```scala
+var a = List[Int](5, 10, 15, 20, 25)
+var b = a.reduce((x: Int, y: Int) => x + y)
+var c = a.reduce((x: Int, y: Int) => x max y)
+
+```
+
+### Currying (柯里化)
+
+```scala
+class CurryingTest {
+    def curryingMethod(a:Int, b: Int)(c:Int): Int = {
+        a * b * c
+    }
+}
+
+var curring = new CurryingTest()
+var result = curring.curryingMethod(2,3)(4)
+
+def doCurrying(x:Int, fun: Int => Int) : Int = {
+    fun(x)
+}
+
+var result = doCurrying(20,curring.curryingMethod(10, 20))
+
+```
