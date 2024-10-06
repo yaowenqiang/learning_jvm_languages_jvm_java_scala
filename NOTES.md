@@ -1381,3 +1381,18 @@ def doCurrying(x:Int, fun: Int => Int) : Int = {
 var result = doCurrying(20,curring.curryingMethod(10, 20))
 
 ```
+
+## Scala Programming
+
+### SBT - Introduction
+
++ Scala can work with Apache Maven or Gradle
++ Scala's own build tool - SBT
+
+### SBT - command execution
+
++ Executed from command line specifying commands parameters 
++ Interactive shell options
++ Running SPT in interactive mode
+  + Commands run interactively
+  + Support autocompeletion
