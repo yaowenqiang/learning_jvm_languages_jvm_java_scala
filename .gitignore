@@ -5,3 +5,7 @@ bin/
 coursier
 java.ipynb
 未命名.ipynb
+bsp/
+.bsp/
+.target
+target/
