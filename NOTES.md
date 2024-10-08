@@ -1396,3 +1396,20 @@ var result = doCurrying(20,curring.curryingMethod(10, 20))
 + Running SPT in interactive mode
   + Commands run interactively
   + Support autocompeletion
+
+
+> sbt -v -d   new scala/scala3.g8
+> brew install ammonite-repl
+> amm
+
+
+https://www.scala-sbt.org/1.x/docs/sbt-new-and-Templates.html
+
+### scalac
+
++ SBT calls scalac
++ scalac used by SBT
++ Code wrapped in classes
++ Define classes and add code 
++ Creating sigleton object with main()
++ Allowing a Singleton object extend the App trait
