@@ -1413,3 +1413,69 @@ https://www.scala-sbt.org/1.x/docs/sbt-new-and-Templates.html
 + Define classes and add code 
 + Creating sigleton object with main()
 + Allowing a Singleton object extend the App trait
+
+### Akka - Introduction
+
++ Creates robust, distributed applications
++ Works with actor model
++ Makes uses of Scala's functional programming features
+
+#### Actors
+
++ Messages send to actor
++ Actor - class instance that extends akka.actor.Actor 
++ Message Handler:
+  + Handles all messages supported by actor
+  + Can pass received message to other Actors
+  + Can create messages and pass them to Actors
+  + Can create new Actors
++ Can run on single process in single application
++ Can ru nin different threads, processes and machines
++ No problems like locking, preventing race conditions
+
+#### Actors Creating Actors
+
++ Actor that creates actors is parent actor and supervisor
++ If child actor fails, it sends messages to parent actor for handling
++ Options:
+  + Request child actor to resume its task, keeping states
+  + Request child actor to restart its task, clearing states
+  + Stop task permanently
+  + Escalate problem, task will fail
+
+#### ActorRef
+
++ Akka does not tive direct access
++ When actor is created - ActorRef instance returned
++ Sends message to the actor
++ Immutable and thread-safe
++ Helps actors to run on different machines
++ Using ActorRef, remote actors can be reached too
++ Self variable - reference to actor's own ActionRef instance and sender
+
+#### Messages
+
++ Instances of class containing data
++ Recommended to have immutable data
++ Scala's case classes excellent for messages
++ No guarantee of transfer of messages
++ Akka's persistence build-in model - successful transfer of messages
++ Messages send stored in queue(Actor's mailbox)
++ Choose mailbox from different options
++ Create own implementation if needed
+
+#### Dispatchers
+
++ Pool of threads for housekeeping
++ they ensure that:
+  + Messages send by actor are placed in mailboxes of receiving actors
+  + Waiting messages in mailboxes are processed by actors
+  + Callbacks requested by actors are called
+  + Default and other implementation available
+
+
+
+
+
+
+> curl -L https://raw.githubusercontent.com/lefou/millw/0.4.12/millw > mill && chmod +x mill
